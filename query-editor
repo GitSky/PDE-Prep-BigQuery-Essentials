@@ -1,0 +1,14 @@
+# First Query
+# Create a query that produces the average trip time for trips originating from the airport in Frankfurt, Germany (FRA)
+# and destined for the airport in Kuala Lumpur, Malaysia (KUL), and group the results by airline.
+# The resulting average times should be similar
+
+SELECT AVG(MINUTES) FROM JasmineJasper.triplog WHERE ORIGIN="FRA" AND DESTINATION="KUL" GROUP BY AIRLINE
+
+
+# Second Query
+# Create a query that produces the average trip time for trips originating from London Heathrow Airport, United Kingdom (LHR)
+# and destined for the airport in Kuala Lumpur, Malaysia (KUL), and group the results by airline, and order them from lowest to highest.
+# The resulting average times should reveal whether the airline, PlanePeople Air, kept its promise to use faster airplanes from Heathrow Airport.
+
+SELECT AIRLINE,AVG(MINUTES) FROM JasmineJasper.triplog WHERE ORIGIN="LHR" AND DESTINATION="KUL" GROUP BY AIRLINE ORDER BY AVG(MINUTES) ASC
